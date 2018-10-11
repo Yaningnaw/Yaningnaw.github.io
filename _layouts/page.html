@@ -2,11 +2,9 @@
 layout: default
 ---
 
-<div class="post-container">
-    <center>
-        <h1 class="post-title">{{ page.title }}</h1>
-    </center>
-    <div class="ui divider"></div>
-    {{ content }}
-    <br/>
+<header>
+  <h1 class="page-title">{{ page.title }}</h1>
+</header>
+<div class="content">
+  {{ content }}
 </div>

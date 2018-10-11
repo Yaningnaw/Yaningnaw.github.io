@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-{% include head.html %}
+  {% include head.html %}
 
-<body>
-    
-    <div class="page-wrap">
-        {% include header.html %}
-        <main>
-            {{ content }}
-        </main>
-    </div>
-    
-    {% include footer.html %}
+  <body class="{{ page.layout }}{% if page.url == '/' %} home{% endif %}">
 
-    <script src="/assets/js/vendor/jquery.min.js"></script>
-    <script src="/assets/js/vendor/semantic.min.js"></script>
-    <script type="/assets/js/main.js"></script>
-</body>
+    {% include sidebar.html %}
 
+    <main class="container">
+      {{ content }}
+    </main>
+
+    {% include custom-foot.html %}
+  </body>
 </html>

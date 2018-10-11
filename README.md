@@ -1,79 +1,168 @@
-# Wall-E
+# Hydeout
 
-Wall-E is a modern Jekyll template with a magazine-like grid layout on the frontpage, beautiful typography and uncomplicated content. 
+Hydeout updates the original [Hyde](https://github.com/poole/hyde)
+theme for [Jekyll](http://jekyllrb.com) 3.x and adds new functionality.
 
-<img src="https://github.com/abhn/Wall-E/blob/master/tmp/desktop.png?raw=true">
+![Desktop](/_screenshots/1.png?raw=true)
+<img alt="Mobile home page" src="/_screenshots/2.png?raw=true" width="300px" />
+<img alt="Mobile post page" src="/_screenshots/3.png?raw=true" width="300px" />
 
-## Demo
-[wall-e-jekyll.github.io/](https://wall-e-jekyll.github.io/)
+### Usage
 
-## Contents
+Hydeout is available as the `jekyll-theme-hydeout` Ruby Gem.
+Add `gem "jekyll-theme-hydeout", "~> 3.4"` to your Gemfile and run
+`bundle install`.
 
-- [Features](#features)
-- [Usage](#usage)
-- [Customization](#customization)
-- [Screenshots](#screenshots-desktop)
-    - [Desktop](#screenshots-desktop)
-    - [Mobile](#screenshots-mobile)
-- [Credits](#credits)
-- [License](#license)
+If you're installing on Github pages, you may also have to add
+`remote_theme: fongandrew/hydeout` to your `_config.yml`. [See the Github
+instructions for more details.](https://help.github.com/articles/adding-a-jekyll-theme-to-your-github-pages-site/)
 
-## Features
+Hydeout uses pagination, so if you have an `index.md`, you'll need to swap
+it with an `index.html` that uses the `index` layout:
 
-- Mobile responsive, built with Semantic UI, customization is easy
-- Disqus is integrated by default
-- One column layout suitable for personal blogs with focus on content
-- Beautiful typography (uses League Gothic and Open Sans)
-- Feature image can be added to homescreen post cards
-- Search box links to Google search by default
+```
+---
+layout: index
+title: Home
+---
+```
 
-## Usage
+You'll also need to add a setting to `_config.yml` telling Jekyll how many posts
+to include per page (e.g. `paginate: 5`).
 
-Wall-E is fully furnished right out of the box. To use this template on your blog
-- If this is your first Jekyll blog, follow this <a href="https://jekyllrb.com/docs/installation/">helpful guide</a> to set up Jekyll.
-- Fork this repository, rename the fork as `your-username.github.io`. Your blog should immediately be live on `https://your-username.github.io`
-- Clone your fork
-- Delete everything in `_posts` directory. Delete the `tmp` directory.
-- Open `_config.yml` and set the variables
-- Open `_includes/disqus.html` and `_includes/disqus-count.html` and replace the value of `disqus_shortname` variable to your Disqus username
-- Run `jekyll serve` and your blog should be live on `http://localhost:4000`. Make changes, test them locally, commit your changes and push to your fork. Your changes should be live in a couple of seconds
+### Keep It Simple
 
-## Customization
-- `_includes/author.html`: Add your name, link to a profile picture and a short author description that appears on the bottom of each post. See <a href="https://semantic-ui.com/views/item.html">Semantic Link</a> docs.
-- `_includes/card.html`: Cards can be customized to show the essential info about a post (feature image, catagory, tags, comment count etc). See <a href="https://semantic-ui.com/views/card.html">Semantic Card</a> docs.
-- `_includes/header.html`: Replace the site logo here. Add/replace frequently visited pages and/or social links here.
-- `_includes/footer.html`: Add your copyrights, if any, here. Also link to the less frequently visited pages and/or social links here.
-- `assets/css/main.css` and `assets/css/mobile.css`: Global and mobile specific CSS files respectively
-- `assets/js/main.js`: Any common javascript goes here. If you wish to customize the search behaviour (for example, use a different search engine), that can be done here.
+In keeping with the original Hyde theme, Hydeout aims to keep the overall
+design lightweight and plugin-free. JavaScript is currently limited only
+to Disqus and Google Analytics (and is only loaded if you provide configuration
+variables).
 
-## Screenshots (Desktop)
+Hydeout makes heavy use of Flexbox in its CSS. If Flexbox is not available,
+the CSS degrades into a single column layout.
 
-### Homepage
-<img src="https://github.com/abhn/Wall-E/blob/master/tmp/desktop.png?raw=true">
+### Customization
 
-### Sample post
-<img src="https://github.com/abhn/Wall-E/blob/master/tmp/desktop-post.png?raw=true">
+Hydeout replaces Hyde's class-based theming with the use
+of the following SASS variables:
 
-## Screenshots (Mobile)
+```scss
+$sidebar-bg-color: #202020 !default;
+$sidebar-fg-color: white !default;
+$sidebar-sticky: true !default;
+$layout-reverse: false !default;
+$link-color: #268bd2 !default;
+```
 
-### Homepage (Portrait)
-<img width="50%" src="https://github.com/abhn/Wall-E/blob/master/tmp/mobile.png?raw=true">
+To override these variables, create your own `assets/css/main.scss` file.
+Define your own variables, then import in Hydeout's SCSS, like so:
 
-### Homepage (Landscape)
-<img src="https://github.com/abhn/Wall-E/blob/master/tmp/mobile-landscape.png?raw=true">
+```scss
+---
+# Jekyll needs front matter for SCSS files
+---
 
-### Sample post (Portrait)
-<img width="50%" src="https://github.com/abhn/Wall-E/blob/master/tmp/mobile-post.png?raw=true">
+$sidebar-bg-color: #ac4142;
+$link-color: #ac4142;
+$sidebar-sticky: false;
+@import "hydeout";
+```
 
-### Footer (Landscape)
-<img src="https://github.com/abhn/Wall-E/blob/master/tmp/mobile-landscape-footer.png?raw=true">
+See the [_variables](_sass/hydeout/_variables.scss) file for other variables
+you can override.
 
+You can see the full set of partials you can replace in the
+[`_includes`](_includes) folder, but there are a few worth noting:
 
-## Credits
-- <a href="https://demo.ghost.io">Ghost</a> blogging platform's demo page for inspiration (and the header background image).
-- <a href="http://www.jeanchristophebonis.com/">For the Wall-E image used everywhere</a>
-- <a href="https://semantic-ui.com">Semantic UI</a>
+* `_includes/copyright.html` - Insert your own copyright here.
 
-## License
+* `_includes/custom-head.html` - Insert custom head tags (e.g. to load your
+  own stylesheets)
 
-Open sourced under the [MIT license](LICENSE.md) <3
+* `_includes/custom-foot.html` - Insert custom elements at the end of the
+  body (e.g. for custom JS)
+
+* `_includes/custom-nav-links.html` - Additional nav links to insert at the
+  end of the list of links in the sidebar.
+
+  Pro-tip: The `nav`s in the sidebar are flexboxes. Use the `order` property
+  to order your links.
+
+* `_includes/custom-icon-links.html`- Additional icon links to insert at the
+  end of the icon links at the bottom of the sidebar. You can use the `order`
+  property to re-order.
+
+* `_includes/favicons.html` - Replace references to `favicon.ico` and
+  `favicon.png` with your own favicons references.
+
+* `_includes/font-includes.html` - The Abril Fatface font used for the site
+  title is loaded here. If you're overriding that font in the CSS, be sure
+  to also remove the font load reference here.
+
+### New Features
+
+* Hydeout adds a new tags page (accessible in the sidebar). Just create a
+  new page with the tags layout:
+
+  ```
+  ---
+  layout: tags
+  title: Tags
+  ---
+  ```
+
+* Hydeout adds a new "category" layout for dedicated category pages.
+  Category pages are automatically added to the sidebar. All other pages
+  must have `sidebar_link: true` in their front matter to show up in
+  the sidebar. To create a category page, use the `category` layout"
+
+  ```
+  ---
+  layout: category
+  title: My Category
+  ---
+
+  Description of "My Category"
+  ```
+
+* You can control how pages are sorted by using the `sidebar_sort_order`
+  parameter in the front matter. This works for both category and non-category
+  pages, although non-category pages will always come first. Take a look at
+  [`_includes/sidebar-nav-links.html`](./_includes/sidebar-nav-links.html) if
+  you want to customize this behavior.
+
+  ```
+  ---
+  layout: page
+  title: My page
+  sidebar_sort_order: 123
+  ---
+
+  Some content.
+  ```
+
+* A simple redirect-to-Google search is available. Just create a page with
+  the `search` layout.
+
+  ```
+  ---
+  layout: search
+  title: Google Search
+  ---
+  ```
+
+* Disqus integration is ready out of the box. Just add the following to
+  your config file:
+
+  ```yaml
+  disqus:
+    shortname: my-disqus-shortname
+  ```
+
+  If you don't want Disqus or want to use something else, override
+  `comments.html`.
+
+* For Google Analytics support, define a `google_analytics` variable with
+  your property ID in your config file.
+
+There's also a bunch of minor tweaks and adjustments throughout the
+theme. Hope this works for you!
