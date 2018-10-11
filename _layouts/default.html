@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
-
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+<body>
+    
+    <div class="page-wrap">
+        {% include header.html %}
+        <main>
+            {{ content }}
+        </main>
     </div>
-
+    
     {% include footer.html %}
 
-  </body>
+    <script src="/assets/js/vendor/jquery.min.js"></script>
+    <script src="/assets/js/vendor/semantic.min.js"></script>
+    <script type="/assets/js/main.js"></script>
+</body>
 
 </html>

@@ -1,27 +1,46 @@
-<header class="site-header">
+<div class="header-wrapper">
+    <header>
+        <!-- logo and description -->
+        {% if page.layout != "post" %}
+        <div class="head-area">
+            <h1 class="site-logo">
+                <a href="/"><img src="/assets/img/logo.png" class="logo"/></a>
+            </h1>
+            <h3 class="site-description">{{ site.description }}</h3>
+        </div>
+        {% endif %}
+        <nav class="site-nav">
+            <div class="left-nav">
+                <!-- add titles to all buttons -->
+                <div class="ui secondary menu inverted">
+                    <a class="item" href="/">
+                        Home
+                    </a>
+                    <a class="item" href="/about.html">
+                        About
+                    </a>
+                    <a class="item" href="/archive.html">
+                        Archive
+                    </a>
+                    <div class="right menu">
+                        <div id="head-search" class="ui category search item">
+                            <div class="ui transparent icon input">
+                                <input placeholder="Search..." type="text" id="search-input" onkeypress="handleKeyPress()">
+                                <i class="search link icon" onclick="handleSubmit()"></i>
+                            </div>
+                        </div>
 
-  <div class="wrapper">
-
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </nav>
-
-  </div>
-
-</header>
+                        <a class="item" href="http://stallman.org/facebook.html">
+                            <i class="facebook link icon"></i>
+                        </a>
+                        <a class="item" href="https://github.com/abhn">
+                            <i class="github link icon"></i>
+                        </a>
+                        <a class="item" href="/feed.xml">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-nav"></div>
+        </nav>
+    </header>
+</div>
