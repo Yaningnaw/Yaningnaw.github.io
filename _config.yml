@@ -1,13 +1,13 @@
-title: YaNinn ' s Mar
-email: hugo.colombo23@gmail.com
+title: YaNing ' s Mar
+email: wxhhkr15@foxmail.com
 author:
-  picture: http://site.hugocarreira.me/assets/img/compressed/hugo.jpg #URL FORMAT
-  name: YaNing
+  picture: https://github.com/Yaningnaw/assets/img/compressed/hugo.jpg #URL FORMAT
+  name: Hugo Carreira
   location: Rio de Janeiro - Brazil
   description: "19 years old, studying computer science"  
 description: Yaninn的博客
 baseurl: "/"
-url: https://hugocarreira.github.io/jekyll-vision-casper-theme
+url: https://Yaningnaw.github.io
 twitter_username: Yaningnaw
 github_username:  Yaningnaw
 github_url: https://github.com/Yaningnaw
