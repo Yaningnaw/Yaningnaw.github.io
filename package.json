@@ -1,28 +1,19 @@
 {
-  "name": "jekyll-hgcasper-theme",
-  "version": "0.0.1",
-  "description": "my vision of Theme Casper",
+  "name": "a",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hugocarreira/jekyll-theme-casper.git"
-  },
-  "keywords": [
-    "jekyll",
-    "casper",
-    "theme",
-    "hugocarreira"
-  ],
-  "author": "hugocarreira",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hugocarreira/jekyll-theme-casper/issues"
-  },
-  "homepage": "https://github.com/hugocarreira/jekyll-theme-casper#readme",
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    
-  }
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.2"
+  },
+  "dependencies": {}
 }
