@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
 {% include post-head.html %}
 
 <body>
@@ -108,6 +112,7 @@
   {% include footer.html %}
 
   <script src="/assets/js/social-share.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
   <script>
     socialShare('.social-share', {
       sites: [
@@ -123,6 +128,7 @@
   </script>
 
   {% if site.comments.disqus %}
+
   <script>
     /**
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -141,6 +147,22 @@
     })();
   </script>
   {% endif %}
+    
+	<script>
+		var gitalk = new Gitalk({
+			  clientID: 'ffffa4f83a1acc05407c',
+			  clientSecret: 'f705cdd050c30af76062d3f390273bcaa3935a18',
+			  repo: 'weijunzii.github.io',
+			  owner: 'weijunzii',
+			  admin: 'weijunzii',
+			  id: location.pathname,      // Ensure uniqueness and length less than 50jekyll-theme-H2O 配置 gitalk
+			  distractionFreeMode: 'true'  // Facebook-like distraction free mode
+			})
+
+			gitalk.render('disqus_thread')
+	</script>
+  
+
 
   <script src="/assets/js/prism.js"></script>
   <script src="/assets/js/index.min.js"></script>

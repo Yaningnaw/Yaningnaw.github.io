@@ -35,6 +35,14 @@ comments:
   disqus: false
   disqus_url: ''
 
+  gitalk: true
+  gitalk_clientID: '0a372669c89e0acdf306'
+  gitalk_Secret: '6b3d76759ba0710bbef1010c596d4dde3d49a8b4'
+  gitalk_repo: 'Yaningnaw.github.io'
+  gitalk_owner: 'Yaningnaw'
+  gitalk_admin: 'Yaningnaw'
+  distractionFreeMode: true
+
 # MathJax 公式支持 by Ray-Eldath
 mathjax: true
 
