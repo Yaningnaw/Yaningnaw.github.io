@@ -72,7 +72,7 @@
         {% endfor %}
       </ul>
       {% endif %}
-	  <div id="gitalk_container"></div>
+	  
     </section>
     <section class="post-footer-item read-next">
       {% if page.next.url %}
@@ -106,6 +106,7 @@
     {% if site.comments.disqus %}
     <section class="post-footer-item comment">
         <div id="disqus_thread"></div>
+		<div id="gitalk_container"></div>
     </section>
     {% endif %}
   </section>
