@@ -1,8 +1,8 @@
 # Site settings 配置站点
-title: '王亚宁博客'
-description: '程序员'
+title: 'Wnliam'
+description: '后端开发者'
 keyword: 'Java, 多线程, Spring, JVM, python, C++, javascript, vuejs, nodejs'
-url: 'http://Wnliam.github.io' # your host
+url: 'https://yaningnaw.github.io/' # your host
 
 # if you don't need baseurl, you should leave this value blank.
 baseurl: ''
@@ -11,15 +11,17 @@ baseurl: ''
 nav:
   home: '/'
   tags: '/tags.html'
+  achive: '/achive.html'
+  about: 'https://www.google.com.hk/search?newwindow=1&safe=strict&ei=1mTZW9GTC4Sz8QXpkZbQDw&q=Wnliam&oq=Wnliam&gs_l=psy-ab.12...0.0.0.11924.0.0.0.0.0.0.0.0..0.0....0...1..64.psy-ab..0.0.0....0.iGobqayYd-E'
 
 # Footer
 footer:
-  since: 2017
+  since: 2018
 
 # Author 配置博主信息
 author: 'Wnliam'
 nickname: 'wang'
-bio: '后端开发者'
+bio: '吾恒惰，需三省；善思忌躁、实研奋行'
 avatar: '/assets/img/profile.jpg'
 
 # Search
@@ -31,7 +33,7 @@ nightMode: true
 # Comments 评论功能
 comments:
   disqus: false
-  disqus_url: 'https://liaokeyu.disqus.com/embed.js'
+  disqus_url: ''
 
 # MathJax 公式支持 by Ray-Eldath
 mathjax: true

@@ -1,0 +1,33 @@
+---
+layout: default
+title: "Archive"
+description: "文章归档"
+header-img: "assets/img/blackbox.jpg"
+---
+
+{% include header.html %}
+
+<div class="g-banner tags-banner {{ site.postPatterns | prepend: 'post-pattern-' }} {{ site.theme-color | prepend: 'bgcolor-' }}" data-theme="{{ site.theme-color }}"
+style="{% if page.header-img %}background: url({{ page.header-img | prepend: site.baseurl }}) no-repeat center center; background-size: cover;{% endif %}"
+>
+    <h2>TAGS</h2>
+</div>
+
+<main class="tags-content">
+<ul class="tags-list">
+{% for post in site.posts %}
+  {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
+  {% if year != y %}
+    {% assign year = y %}
+    <li style="color:black">{{ y }}</li>
+  {% endif %}
+  <li >
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+  </li>
+{% endfor %}
+</ul>
+
+</main>
+    
+{% include footer.html %}
