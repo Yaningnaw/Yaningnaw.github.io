@@ -4,7 +4,7 @@ title: '一个面试题引发的关于synchronized的体会'
 subtitle: 'Java多线程'
 date: 2018-10-30
 categories: 技术
-cover: '/assets/img/tree.jpg'
+cover: 'https://wnliam-cn.gitee.io/yaningnaw.github.io/assets/img/tree.jpg'
 tags: Java 多线程 设计
 ---
 ### 故事的开端是这样的：

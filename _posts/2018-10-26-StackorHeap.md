@@ -4,7 +4,7 @@ title: '操作系统Stack和Heap的概念简述'
 subtitle: '0.0 the crazy overflow'
 date: 2018-10-26
 categories: 技术
-cover: '/assets/img/Earth.jpg'
+cover: 'https://wnliam-cn.gitee.io/yaningnaw.github.io/assets/img/Earth.jpg'
 tags: Java JVM
 ---
 # Heap(堆)、Stack(栈)的概念 
