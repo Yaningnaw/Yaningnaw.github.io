@@ -32,7 +32,7 @@ nightMode: true
 
 # Comments 评论功能
 comments:
-  disqus: false
+  disqus: true
   disqus_url: ''
 
   gitalk: true

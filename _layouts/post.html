@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
 
 {% include post-head.html %}
@@ -102,16 +101,20 @@
           {% endif %}
       </div>
       {% endif %}
-    </section>
-    {% if site.comments.disqus %}
+
+	  {% if site.comments.disqus %}
     <section class="post-footer-item comment">
         <div id="disqus_thread"></div>
 		<div id="gitalk_container"></div>
     </section>
     {% endif %}
+
+    </section>
+    
   </section>
 
   {% include footer.html %}
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
   <script src="/assets/js/social-share.min.js"></script>
   <script>
@@ -149,6 +152,12 @@
   </script>
   {% endif %}
     
+  
+
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+
   {% if site.comments.gitalk %}
  	<script>
  		var gitalk = new Gitalk({
@@ -164,10 +173,6 @@
  			gitalk.render('disqus_thread')
  	</script>
    {% endif %}
-
-
-  <script src="/assets/js/prism.js"></script>
-  <script src="/assets/js/index.min.js"></script>
 </body>
 
 </html>
