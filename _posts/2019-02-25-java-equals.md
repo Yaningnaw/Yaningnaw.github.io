@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Java基础面试之：重写equals()为什么重写hashcode()'
-subtitle: 'Spring'
+subtitle: 'studynote'
 date: 2019-02-25
 tags: Java基础 面试
 ---
