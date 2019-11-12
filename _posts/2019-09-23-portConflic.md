@@ -8,7 +8,7 @@ tags: Spring
 ---
 
 今天早上当我正常修改代码构建新项目的时候，运行之后才发现使用postman访问接口访问不到，查看springboot报错信息是这样的：
-```
+```Cmd
 The Tomcat connector configured to listen on port 9000 failed to start. The port may already be in use or the connector may be misconfigured.
 
 Action:
@@ -19,13 +19,13 @@ Verify the connector's configuration, identify and stop any process that's liste
 很明显是端口占用问题，其实更改配置就可以解决这个问题。
 例如：
 
-```
+```Propertise
 server.port=7000
 ```
 
 但是我并不想改变项目的端口信息，就想找到windows内部该端口杀死这个进程来解决问题，我的设想是这样的：
 
-```
+```Shell
 netstat -ano|findstr 9000
 返回该端口号
 taskkill /f /t /im 该端口号
@@ -35,7 +35,7 @@ taskkill /f /t /im 该端口号
 
 我百思不得其解，最后想到一个比较暴力的解决方式：
 
-```
+```Shell
 netsh winsock reset
 ```
 执行后重启解决了该问题  
